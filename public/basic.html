@@ -6,40 +6,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title></title>
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+          href="./stylesheet/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheet/converter.css">
+    <link rel="stylesheet" href="./stylesheet/bootstrap-select/bootstrap-select.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
-    <script src="./javascript/ffmpeg/ffmpeg.js"></script>
+    <script src="./javascript/bootstrap/bootstrap.min.js"></script>
+    <script src="./javascript/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./javascript/bootstrap-select/bootstrap-select.min.js"></script>
+    <!--    <script src="./javascript/ffmpeg/ffmpeg.js"></script>-->
 </head>
 
 <body>
 <div class="main">
-    <div class="custom-file">
-        <input type="file" class="custom-file-input" id="videoFile">
-        <label id="VideoFileLabel" class="custom-file-label" for="videoFile">Click here to choose your file...</label>
-    </div>
-    <button type="button" class="btn btn-primary">Transcode</button>
+    <div class="banner">
 
-    <div class="transcode-query">
+    </div>
+    <form>
+        <div class="form-group">
+            <div class="drag-area">
+                <!--drag area-->
+                <span>Drag your files to here or click</span>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="transcode-query card">
+        <div class="query-header card-header">
+            <span>Query: </span>
+        </div>
+        <div class="query-body card-body">
+            <!--item template start-->
+            <ul class="list-group">
+                <li class="p-0 border-0 list-group-item">
+                    <div class="transcode-item">
+                        <div class="input-group">
+                            <div class="progress-parent">
+                                <div class="progress l-radius" style="height: 100%">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                         aria-valuemax="100">
+                                        <div class="transcode-item-info">
+                                            <div class="icon-parent">
+                                                <svg t="1602607880537" class="icon icon-video" viewBox="0 0 1024 1024"
+                                                     version="1.1"
+                                                     xmlns="http://www.w3.org/2000/svg" p-id="1279" width="28"
+                                                     height="28">
+                                                    <path
+                                                            d="M959.5 511.9c0-246.8-200.8-447.7-447.7-447.7C265 64.2 64.2 265 64.2 511.9c0 246.8 200.8 447.7 447.7 447.7H874v-49.7H716.5c144.2-74.5 243-224.9 243-398z m-845.6 0c0-219.4 178.5-397.9 397.9-397.9 219.4 0 397.9 178.5 397.9 397.9 0 219.4-178.5 397.9-397.9 397.9-219.4 0-397.9-178.5-397.9-397.9z"
+                                                            fill="#2c2c2c" p-id="1280"></path>
+                                                    <path
+                                                            d="M383.9 698.5l323.2-186.6-323.2-186.6v373.2z m39.5-304.8l204.7 118.2-204.7 118.2V393.7z"
+                                                            fill="#2c2c2c" p-id="1281"></path>
+                                                </svg>
+                                            </div>
+                                            <p class="flex-grow-1 card-text text-dark font-weight-bold transcode-name"
+                                               style="font-size: 16px;">
+                                                建德苞茶.mp4</p>
+                                            <select class="no-radius selectpicker" data-width="auto"
+                                                    title="Convert to..."
+                                                    data-live-search="true">
+                                                <optgroup label="Commonly Used">
+                                                    <option data-subtext="Video">mp4</option>
+                                                    <option data-subtext="Video">mov</option>
+                                                    <option data-subtext="Video">mp3</option>
+                                                </optgroup>
+                                                <optgroup label="Audio">
+                                                    <option>mp3</option>
+                                                    <option>aac</option>
+                                                    <option>wav</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group-append transcode-status">
+                            <button class="btn no-radius" type="button" data-toggle="tooltip" data-placement="top"
+                                    title="start to transcode">
+                                <span class="icon-parent">
+                                <svg t="1602609303457" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" p-id="3003" width="24" height="24">
+                                    <path d="M687.600679 522.283775L454.661003 387.639522c-13.310839-7.67933-24.573856-1.535866-24.573856 14.33475V670.750821c0 15.35866 11.263017 22.014079 24.573856 14.334749l232.939676-134.644252c13.822794-7.67933 13.822794-20.478213 0-28.157543z"
+                                          p-id="3004" fill="#2c2c2c"></path>
+                                    <path d="M415.240442 889.867703c-146.93118-38.39665-253.929845-161.26593-272.872192-311.780797C122.913948 427.060083 195.611605 279.616947 327.184125 203.335603c41.468382-24.061901 87.032406-39.420561 134.644252-46.07598 28.669499-4.095643 48.635757-30.71732 45.05207-58.874863-1.535866-13.822794-8.703241-26.109722-19.454303-34.812963-10.751062-8.703241-24.573856-12.286928-38.39665-10.751062h-0.511955c-60.922684 8.191285-119.285592 28.157543-173.040902 58.874864C164.38233 176.20197 81.957521 284.224545 49.704335 408.117736c-31.741231 121.333414-15.35866 248.298336 46.07598 357.344821 31.741231 56.827042 75.769389 106.998664 127.476878 145.90727l-53.243355 7.167375H168.989928c-28.669499 5.631509-47.099891 33.789052-41.468382 61.946595 5.119553 24.573856 27.133633 42.492293 51.707488 42.492292h3.071732l226.284257-30.71732c13.822794-2.047821 26.109722-9.215196 34.812963-20.478213 8.703241-11.263017 12.286928-25.085811 10.239106-38.908605-3.071732-20.478213-17.918437-37.372739-38.39665-43.004248zM928.219685 289.856054c-33.789052-59.898774-80.376987-112.118218-135.668163-152.050734l88.056317-33.277096c27.645588-6.143464 45.564025-33.789052 39.932516-61.946595-5.119553-25.597767-28.669499-44.028159-54.779221-42.492293h-1.535866L614.391066 63.059842c-28.157543 4.607598-48.123801 31.229275-44.028158 59.386819 3.071732 20.990169 17.918437 38.39665 38.908605 43.516203 146.93118 38.908605 253.929845 161.26593 272.872192 311.780797 12.798883 98.807379-13.310839 197.102803-73.721568 276.967834-58.874863 78.329166-148.467046 130.54861-245.738559 143.347493-28.669499 4.095643-49.147712 30.71732-45.052069 59.386819 2.047821 13.822794 9.215196 26.109722 19.966258 34.812962 9.215196 7.167375 20.478213 10.751062 31.74123 10.751062 2.559777 0 4.607598 0 7.167375-0.511955 124.405146-16.894526 239.595095-83.960674 315.364484-184.303919 115.701905-152.562689 130.036654-359.904598 36.348829-528.337903z"
+                                          p-id="3005" fill="#2c2c2c"></path>
+                                </svg>
+                            </span>
+                            </button>
+                            <div data-toggle="tooltip" data-placement="top" title="Advanced Settings">
+                                <button class="btn r-radius h-100" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                    <span class="icon-parent">
+                                <svg t="1602612077585" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" p-id="3908" width="18" height="18"><path
+                                        d="M163.446154 275.692308h697.107692c19.692308 0 33.476923 25.6 17.723077 43.323077L537.6 736.492308c-11.815385 15.753846-37.415385 15.753846-49.230769 0L143.753846 319.015385c-13.784615-17.723077-1.969231-43.323077 19.692308-43.323077z"
+                                        p-id="3909"></path></svg>
+                                </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            TODO: Advanced Settings Collapse
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!--item template end-->
+        </div>
+        <div class="query-footer card-footer">
+            <span class="query-footer-label">Total:</span>
+            <span class="query-footer-value">100%</span>
+        </div>
+    </div>
+
+    <div class="footer">
 
     </div>
 </div>
 
-    <script type="text/javascript">
-        function ffmpeg(opts) {
-            const _ffmpeg = Module.cwrap('proxy_main', 'number', ['number', 'number']);
-            const args = opts.unshift('ffmpeg');
-            const argsPtr = Module._malloc(args.length * Uint32Array.BYTES_PER_ELEMENT);
-            args.forEach((s, idx) => {
-                const buf = Module._malloc(s.length + 1);
-                Module.writeAsciiToMemory(s, buf);
-                Module.setValue(argsPtr + (Uint32Array.BYTES_PER_ELEMENT * idx), buf, 'i32');
-            });
-            _ffmpeg(args.length, argsPtr);
-        }
-    </script>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+<script type="text/javascript">
+    function ffmpeg(opts) {
+        const _ffmpeg = Module.cwrap('proxy_main', 'number', ['number', 'number']);
+        const args = opts.unshift('ffmpeg');
+        const argsPtr = Module._malloc(args.length * Uint32Array.BYTES_PER_ELEMENT);
+        args.forEach((s, idx) => {
+            const buf = Module._malloc(s.length + 1);
+            Module.writeAsciiToMemory(s, buf);
+            Module.setValue(argsPtr + (Uint32Array.BYTES_PER_ELEMENT * idx), buf, 'i32');
+        });
+        _ffmpeg(args.length, argsPtr);
+    }
+</script>
 </body>
 
 </html>

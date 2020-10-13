@@ -8,3 +8,67 @@
 .custom-file {
     width: 60%;
 }
+
+.query-body {
+    margin: 20px 0;
+}
+
+.query-footer-label {
+    float: left;
+}
+
+.query-footer-value {
+    float: right;
+}
+
+.transcode-item {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 4px;
+}
+
+.icon-parent {
+    padding: 0 7px;
+}
+
+.progress-parent {
+    flex: 1;
+}
+
+.transcode-item-info {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.l-radius {
+    border-radius: .25rem 0 0 .25rem;
+}
+
+.r-radius {
+    border-radius: 0 .25rem .25rem 0;
+}
+
+.no-radius {
+    border-radius: 0;
+}
+
+.transcode-status .btn {
+    min-width: 40px;
+    max-width: 40px;
+    padding: 0;
+}
+
+.transcode-name {
+    text-align: start;
+    margin: auto 0;
+}
+
+.dropdown-menu {
+    line-height: normal;
+}
