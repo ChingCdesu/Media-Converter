@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheet/converter.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+    <script src="./javascript/ffmpeg/ffmpeg.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="videoFile">
+        <label id="VideoFileLabel" class="custom-file-label" for="videoFile">Click here to choose your file...</label>
+    </div>
+    <button type="button" class="btn btn-primary">Transcode</button>
+
+    <div class="transcode-query">
+
+    </div>
+</div>
+
+    <script type="text/javascript">
+        function ffmpeg(opts) {
+            const _ffmpeg = Module.cwrap('proxy_main', 'number', ['number', 'number']);
+            const args = opts.unshift('ffmpeg');
+            const argsPtr = Module._malloc(args.length * Uint32Array.BYTES_PER_ELEMENT);
+            args.forEach((s, idx) => {
+                const buf = Module._malloc(s.length + 1);
+                Module.writeAsciiToMemory(s, buf);
+                Module.setValue(argsPtr + (Uint32Array.BYTES_PER_ELEMENT * idx), buf, 'i32');
+            });
+            _ffmpeg(args.length, argsPtr);
+        }
+    </script>
+</body>
+
+</html>
