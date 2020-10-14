@@ -72,3 +72,68 @@
 .dropdown-menu {
     line-height: normal;
 }
+
+.banner {
+    width: 100vw;
+    background: #7abaff;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    padding: .25rem 1.25rem;
+    justify-content: space-between;
+}
+
+.banner-header, .banner-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.web-title {
+    color: #f8f5d8;
+    font-weight: bold;
+    margin: auto 0;
+}
+
+.slider {
+    margin: 0 20px;
+    flex: 1;
+}
+
+.slider-handle {
+    background: #ebebeb;
+    box-shadow:  1px 1px 3px #a5a5a5/* , -1px -1px 3px #ffffff*/;
+}
+
+.slider-selection {
+    background: #BABABA;
+}
+
+.advanced-input {
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    padding: 2px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+
+.text-align-center, .text-align-center * {
+    text-align: center !important;
+}
+
+.text-align-end, .text-align-end * {
+    text-align: end !important;
+}
+
+.background-transparent button.dropdown-toggle {
+    background-color: transparent;
+    border: none;
+}
+
+.progress-bar.basecolor {
+    background-color: #7abaff;
+}

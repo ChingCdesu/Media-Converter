@@ -2,152 +2,405 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
-    <link rel="stylesheet"
-          href="./stylesheet/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="./stylesheet/converter.css">
-    <link rel="stylesheet" href="./stylesheet/bootstrap-select/bootstrap-select.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="./javascript/bootstrap/bootstrap.min.js"></script>
-    <script src="./javascript/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="./javascript/bootstrap-select/bootstrap-select.min.js"></script>
-    <!--    <script src="./javascript/ffmpeg/ffmpeg.js"></script>-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+  <link rel="stylesheet"
+        href="./stylesheet/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./stylesheet/bootstrap-select/bootstrap-select.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css"/>
+  <link rel="stylesheet" href="./stylesheet/converter.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="./javascript/bootstrap/bootstrap.min.js"></script>
+  <script src="./javascript/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="./javascript/bootstrap-select/bootstrap-select.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+  <!--    <script src="./javascript/ffmpeg/ffmpeg.js"></script>-->
 </head>
 
 <body>
-<div class="main">
-    <div class="banner">
-
+<div class="banner">
+  <div class="banner-header">
+    <div class="icon-parent">
+      <svg t="1602654990963" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+           p-id="14583" width="28" height="28">
+        <path
+            d="M509.44 51.2A458.24 458.24 0 1 0 967.68 509.44 458.752 458.752 0 0 0 509.44 51.2z m0 848.00512A389.76512 389.76512 0 1 1 899.20512 509.44 390.20544 390.20544 0 0 1 509.44 899.20512z m127.03232-471.7568L523.264 362.08128a105.50784 105.50784 0 0 0-158.27456 91.37152V584.192a105.28256 105.28256 0 0 0 158.27456 91.37152l113.22368-65.36704a105.51808 105.51808 0 0 0-0.01536-182.74816z m-34.23744 123.46368l-113.21856 65.35168A37.03808 37.03808 0 0 1 433.4592 584.192V453.4528a36.38272 36.38272 0 0 1 18.51904-32.0768 38.144 38.144 0 0 1 18.70336-5.12 36.24448 36.24448 0 0 1 18.33472 5.12l113.21856 65.36704a37.03808 37.03808 0 0 1 0 64.16896z"
+            fill="#556FB5" p-id="14584"></path>
+        <path
+            d="M636.47232 427.44832L523.264 362.08128a105.50784 105.50784 0 0 0-158.27456 91.37152V584.192a105.28256 105.28256 0 0 0 158.27456 91.37152l113.22368-65.36704a105.51808 105.51808 0 0 0-0.01536-182.74816z m-34.23744 123.46368l-113.21856 65.35168A37.03808 37.03808 0 0 1 433.4592 584.192V453.4528a36.38272 36.38272 0 0 1 18.51904-32.0768 38.144 38.144 0 0 1 18.70336-5.12 36.24448 36.24448 0 0 1 18.33472 5.12l113.21856 65.36704a37.03808 37.03808 0 0 1 0 64.16896z"
+            fill="#F19149" p-id="14585"></path>
+      </svg>
     </div>
-    <form>
-        <div class="form-group">
-            <div class="drag-area">
-                <!--drag area-->
-                <span>Drag your files to here or click</span>
+    <p class="web-title">Media Converter</p>
+  </div>
+  <div class="banner-footer">
+    <button class="icon-parent btn">
+      <svg t="1602655467980" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+           p-id="14719" width="28" height="28">
+        <path
+            d="M518.44096 351.35488A160.61952 160.61952 0 1 0 679.424 512a160.97792 160.97792 0 0 0-160.98304-160.64512z m0 258.74944A98.12992 98.12992 0 1 1 616.77568 512a98.34496 98.34496 0 0 1-98.33472 98.10432z"
+            fill="#2c2c2c" p-id="14720"></path>
+        <path
+            d="M872.36096 379.3408h-38.4a4.45952 4.45952 0 0 1-4.096-2.2528 342.12352 342.12352 0 0 0-36.41344-64.45056 3.9168 3.9168 0 0 1 0.18432-4.096l20.096-33.07008a94.99136 94.99136 0 0 0-32.06144-130.64192l-64.31232-38.912a95.54944 95.54944 0 0 0-130.92352 32l-20.07552 33.09056a3.90144 3.90144 0 0 1-3.61984 2.048 344.84736 344.84736 0 0 0-96.3584 0 3.92192 3.92192 0 0 1-3.62496-2.048l-20.10112-33.06496a95.53408 95.53408 0 0 0-130.92864-32l-64.30208 38.912A95.104 95.104 0 0 0 215.35744 275.456l20.096 33.07008a3.91168 3.91168 0 0 1 0.18432 4.096 342.24128 342.24128 0 0 0-36.41344 64.46592 4.39296 4.39296 0 0 1-4.06528 2.2528h-38.4A95.31904 95.31904 0 0 0 61.44 474.44992v75.04896A95.31904 95.31904 0 0 0 156.75392 644.608h38.4a4.39296 4.39296 0 0 1 4.06528 2.25792 342.16448 342.16448 0 0 0 36.41344 64.44544 3.92192 3.92192 0 0 1-0.1792 4.096l-20.10112 33.07008a95.09888 95.09888 0 0 0 32.0768 130.62656l64.30208 38.912a94.85312 94.85312 0 0 0 49.2544 13.824 96.37376 96.37376 0 0 0 22.85056-2.7648 94.66368 94.66368 0 0 0 58.81856-43.05408l20.10624-33.0752a3.968 3.968 0 0 1 3.61984-2.048 344.30976 344.30976 0 0 0 96.34816 0 3.89632 3.89632 0 0 1 3.63008 2.048l20.10624 33.07008a95.52384 95.52384 0 0 0 130.9184 32l64.31232-38.912a94.99136 94.99136 0 0 0 32.06144-130.64192l-20.096-33.06496a3.92192 3.92192 0 0 1-0.18432-4.096 341.79584 341.79584 0 0 0 36.41344-64.45568 4.4544 4.4544 0 0 1 4.096-2.2528h38.4A95.31904 95.31904 0 0 0 967.68 549.49888V474.45504a95.32416 95.32416 0 0 0-95.31904-95.11424z m32.6912 170.15808a32.6912 32.6912 0 0 1-32.6912 32.61952h-38.4a66.76992 66.76992 0 0 0-61.62944 40.12544 279.59296 279.59296 0 0 1-29.76256 52.67456 65.9968 65.9968 0 0 0-2.45248 72.89344l20.10112 33.07008a32.58368 32.58368 0 0 1-10.99776 44.80512l-64.3072 38.912a32.768 32.768 0 0 1-44.9024-10.97216l-20.10112-33.07008a66.33984 66.33984 0 0 0-65.9712-31.50336 281.66656 281.66656 0 0 1-78.76096 0 66.3552 66.3552 0 0 0-65.96096 31.49824L389.12 853.632a32.72704 32.72704 0 0 1-44.9024 10.97216l-64.30208-38.912a32.6144 32.6144 0 0 1-10.99776-44.8l20.10112-33.07008a66.01216 66.01216 0 0 0-2.46272-72.90368 279.31136 279.31136 0 0 1-29.75744-52.66432 66.77504 66.77504 0 0 0-61.63968-40.11008h-38.4a32.6912 32.6912 0 0 1-32.68608-32.61952V474.44992a32.6912 32.6912 0 0 1 32.68096-32.59392h38.4a66.78016 66.78016 0 0 0 61.62944-40.12032 279.552 279.552 0 0 1 29.75744-52.67456 65.9968 65.9968 0 0 0 2.4576-72.89344L268.9024 243.0976a32.6144 32.6144 0 0 1 10.99776-44.81024l64.30208-38.912A32.768 32.768 0 0 1 389.12 170.32192l20.10112 33.07008a66.32448 66.32448 0 0 0 65.9712 31.49824 281.856 281.856 0 0 1 78.75584 0 66.32448 66.32448 0 0 0 65.9712-31.49824L640 170.32192a32.768 32.768 0 0 1 44.90752-10.97728l64.3072 38.912a32.57856 32.57856 0 0 1 10.99776 44.80512l-20.10624 33.07008a66.00192 66.00192 0 0 0 2.46272 72.89856 279.48544 279.48544 0 0 1 29.75744 52.66944 66.76992 66.76992 0 0 0 61.63456 40.15616h38.4a32.6912 32.6912 0 0 1 32.6912 32.62464v75.04384z"
+            fill="#2c2c2c" p-id="14721"></path>
+      </svg>
+    </button>
+  </div>
+
+</div>
+<div class="main">
+  <form>
+    <div class="form-group">
+      <div class="drag-area">
+        <!--drag area-->
+        <span>TODO: Drag your files to here or click</span>
+      </div>
+    </div>
+  </form>
+
+
+  <div class="transcode-query card">
+    <div class="query-header card-header">
+      <span>Transcode query: </span>
+    </div>
+    <div class="query-body card-body pr-3 pl-3 pt-1 pb-1">
+      <ul class="list-group">
+        <!--item template start-->
+        <li class="p-1 border-0 list-group-item">
+          <div class="transcode-item">
+            <div class="input-group">
+              <div class="progress-parent">
+                <div class="progress l-radius" style="height: 100%">
+                  <div class="progress-bar basecolor progress-bar-striped progress-bar-animated" role="progressbar"
+                       style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                       aria-valuemax="100">
+                    <div class="transcode-item-info">
+                      <div class="icon-parent">
+                        <svg t="1602607880537" class="icon icon-video" viewBox="0 0 1024 1024"
+                             version="1.1"
+                             xmlns="http://www.w3.org/2000/svg" p-id="1279" width="28"
+                             height="28">
+                          <path
+                              d="M959.5 511.9c0-246.8-200.8-447.7-447.7-447.7C265 64.2 64.2 265 64.2 511.9c0 246.8 200.8 447.7 447.7 447.7H874v-49.7H716.5c144.2-74.5 243-224.9 243-398z m-845.6 0c0-219.4 178.5-397.9 397.9-397.9 219.4 0 397.9 178.5 397.9 397.9 0 219.4-178.5 397.9-397.9 397.9-219.4 0-397.9-178.5-397.9-397.9z"
+                              fill="#2c2c2c" p-id="1280"></path>
+                          <path
+                              d="M383.9 698.5l323.2-186.6-323.2-186.6v373.2z m39.5-304.8l204.7 118.2-204.7 118.2V393.7z"
+                              fill="#2c2c2c" p-id="1281"></path>
+                        </svg>
+                      </div>
+                      <p class="flex-grow-1 card-text text-dark font-weight-bold transcode-name"
+                         style="font-size: 16px;">
+                        建德苞茶.mp4</p>
+                      <select class="no-radius selectpicker background-transparent text-align-end" data-width="auto"
+                              title="Convert to..."
+                              data-live-search="true">
+                        <optgroup label="Commonly Used">
+                          <option data-subtext="Video">mp4</option>
+                          <option data-subtext="Video">mov</option>
+                          <option data-subtext="Video">mp3</option>
+                        </optgroup>
+                        <optgroup label="Audio">
+                          <option>mp3</option>
+                          <option>aac</option>
+                          <option>wav</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </form>
-
-
-    <div class="transcode-query card">
-        <div class="query-header card-header">
-            <span>Query: </span>
-        </div>
-        <div class="query-body card-body">
-            <!--item template start-->
-            <ul class="list-group">
-                <li class="p-0 border-0 list-group-item">
-                    <div class="transcode-item">
-                        <div class="input-group">
-                            <div class="progress-parent">
-                                <div class="progress l-radius" style="height: 100%">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                         aria-valuemax="100">
-                                        <div class="transcode-item-info">
-                                            <div class="icon-parent">
-                                                <svg t="1602607880537" class="icon icon-video" viewBox="0 0 1024 1024"
-                                                     version="1.1"
-                                                     xmlns="http://www.w3.org/2000/svg" p-id="1279" width="28"
-                                                     height="28">
-                                                    <path
-                                                            d="M959.5 511.9c0-246.8-200.8-447.7-447.7-447.7C265 64.2 64.2 265 64.2 511.9c0 246.8 200.8 447.7 447.7 447.7H874v-49.7H716.5c144.2-74.5 243-224.9 243-398z m-845.6 0c0-219.4 178.5-397.9 397.9-397.9 219.4 0 397.9 178.5 397.9 397.9 0 219.4-178.5 397.9-397.9 397.9-219.4 0-397.9-178.5-397.9-397.9z"
-                                                            fill="#2c2c2c" p-id="1280"></path>
-                                                    <path
-                                                            d="M383.9 698.5l323.2-186.6-323.2-186.6v373.2z m39.5-304.8l204.7 118.2-204.7 118.2V393.7z"
-                                                            fill="#2c2c2c" p-id="1281"></path>
-                                                </svg>
-                                            </div>
-                                            <p class="flex-grow-1 card-text text-dark font-weight-bold transcode-name"
-                                               style="font-size: 16px;">
-                                                建德苞茶.mp4</p>
-                                            <select class="no-radius selectpicker" data-width="auto"
-                                                    title="Convert to..."
-                                                    data-live-search="true">
-                                                <optgroup label="Commonly Used">
-                                                    <option data-subtext="Video">mp4</option>
-                                                    <option data-subtext="Video">mov</option>
-                                                    <option data-subtext="Video">mp3</option>
-                                                </optgroup>
-                                                <optgroup label="Audio">
-                                                    <option>mp3</option>
-                                                    <option>aac</option>
-                                                    <option>wav</option>
-                                                </optgroup>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group-append transcode-status">
-                            <button class="btn no-radius" type="button" data-toggle="tooltip" data-placement="top"
-                                    title="start to transcode">
+            <div class="input-group-append transcode-status">
+              <button class="btn no-radius" type="button" data-toggle="tooltip" data-placement="top"
+                      title="Start to transcode">
                                 <span class="icon-parent">
                                 <svg t="1602609303457" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                      xmlns="http://www.w3.org/2000/svg" p-id="3003" width="24" height="24">
-                                    <path d="M687.600679 522.283775L454.661003 387.639522c-13.310839-7.67933-24.573856-1.535866-24.573856 14.33475V670.750821c0 15.35866 11.263017 22.014079 24.573856 14.334749l232.939676-134.644252c13.822794-7.67933 13.822794-20.478213 0-28.157543z"
-                                          p-id="3004" fill="#2c2c2c"></path>
-                                    <path d="M415.240442 889.867703c-146.93118-38.39665-253.929845-161.26593-272.872192-311.780797C122.913948 427.060083 195.611605 279.616947 327.184125 203.335603c41.468382-24.061901 87.032406-39.420561 134.644252-46.07598 28.669499-4.095643 48.635757-30.71732 45.05207-58.874863-1.535866-13.822794-8.703241-26.109722-19.454303-34.812963-10.751062-8.703241-24.573856-12.286928-38.39665-10.751062h-0.511955c-60.922684 8.191285-119.285592 28.157543-173.040902 58.874864C164.38233 176.20197 81.957521 284.224545 49.704335 408.117736c-31.741231 121.333414-15.35866 248.298336 46.07598 357.344821 31.741231 56.827042 75.769389 106.998664 127.476878 145.90727l-53.243355 7.167375H168.989928c-28.669499 5.631509-47.099891 33.789052-41.468382 61.946595 5.119553 24.573856 27.133633 42.492293 51.707488 42.492292h3.071732l226.284257-30.71732c13.822794-2.047821 26.109722-9.215196 34.812963-20.478213 8.703241-11.263017 12.286928-25.085811 10.239106-38.908605-3.071732-20.478213-17.918437-37.372739-38.39665-43.004248zM928.219685 289.856054c-33.789052-59.898774-80.376987-112.118218-135.668163-152.050734l88.056317-33.277096c27.645588-6.143464 45.564025-33.789052 39.932516-61.946595-5.119553-25.597767-28.669499-44.028159-54.779221-42.492293h-1.535866L614.391066 63.059842c-28.157543 4.607598-48.123801 31.229275-44.028158 59.386819 3.071732 20.990169 17.918437 38.39665 38.908605 43.516203 146.93118 38.908605 253.929845 161.26593 272.872192 311.780797 12.798883 98.807379-13.310839 197.102803-73.721568 276.967834-58.874863 78.329166-148.467046 130.54861-245.738559 143.347493-28.669499 4.095643-49.147712 30.71732-45.052069 59.386819 2.047821 13.822794 9.215196 26.109722 19.966258 34.812962 9.215196 7.167375 20.478213 10.751062 31.74123 10.751062 2.559777 0 4.607598 0 7.167375-0.511955 124.405146-16.894526 239.595095-83.960674 315.364484-184.303919 115.701905-152.562689 130.036654-359.904598 36.348829-528.337903z"
-                                          p-id="3005" fill="#2c2c2c"></path>
+                                    <path
+                                        d="M687.600679 522.283775L454.661003 387.639522c-13.310839-7.67933-24.573856-1.535866-24.573856 14.33475V670.750821c0 15.35866 11.263017 22.014079 24.573856 14.334749l232.939676-134.644252c13.822794-7.67933 13.822794-20.478213 0-28.157543z"
+                                        p-id="3004" fill="#2c2c2c"></path>
+                                    <path
+                                        d="M415.240442 889.867703c-146.93118-38.39665-253.929845-161.26593-272.872192-311.780797C122.913948 427.060083 195.611605 279.616947 327.184125 203.335603c41.468382-24.061901 87.032406-39.420561 134.644252-46.07598 28.669499-4.095643 48.635757-30.71732 45.05207-58.874863-1.535866-13.822794-8.703241-26.109722-19.454303-34.812963-10.751062-8.703241-24.573856-12.286928-38.39665-10.751062h-0.511955c-60.922684 8.191285-119.285592 28.157543-173.040902 58.874864C164.38233 176.20197 81.957521 284.224545 49.704335 408.117736c-31.741231 121.333414-15.35866 248.298336 46.07598 357.344821 31.741231 56.827042 75.769389 106.998664 127.476878 145.90727l-53.243355 7.167375H168.989928c-28.669499 5.631509-47.099891 33.789052-41.468382 61.946595 5.119553 24.573856 27.133633 42.492293 51.707488 42.492292h3.071732l226.284257-30.71732c13.822794-2.047821 26.109722-9.215196 34.812963-20.478213 8.703241-11.263017 12.286928-25.085811 10.239106-38.908605-3.071732-20.478213-17.918437-37.372739-38.39665-43.004248zM928.219685 289.856054c-33.789052-59.898774-80.376987-112.118218-135.668163-152.050734l88.056317-33.277096c27.645588-6.143464 45.564025-33.789052 39.932516-61.946595-5.119553-25.597767-28.669499-44.028159-54.779221-42.492293h-1.535866L614.391066 63.059842c-28.157543 4.607598-48.123801 31.229275-44.028158 59.386819 3.071732 20.990169 17.918437 38.39665 38.908605 43.516203 146.93118 38.908605 253.929845 161.26593 272.872192 311.780797 12.798883 98.807379-13.310839 197.102803-73.721568 276.967834-58.874863 78.329166-148.467046 130.54861-245.738559 143.347493-28.669499 4.095643-49.147712 30.71732-45.052069 59.386819 2.047821 13.822794 9.215196 26.109722 19.966258 34.812962 9.215196 7.167375 20.478213 10.751062 31.74123 10.751062 2.559777 0 4.607598 0 7.167375-0.511955 124.405146-16.894526 239.595095-83.960674 315.364484-184.303919 115.701905-152.562689 130.036654-359.904598 36.348829-528.337903z"
+                                        p-id="3005" fill="#2c2c2c"></path>
                                 </svg>
                             </span>
-                            </button>
-                            <div data-toggle="tooltip" data-placement="top" title="Advanced Settings">
-                                <button class="btn r-radius h-100" type="button" data-toggle="collapse"
-                                        data-target="#collapseExample" aria-expanded="false"
-                                        aria-controls="collapseExample">
+              </button>
+              <div data-toggle="tooltip" data-placement="top" title="Advanced Settings">
+                <button class="btn r-radius h-100" type="button" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false"
+                        aria-controls="collapseExample">
                                     <span class="icon-parent">
                                 <svg t="1602612077585" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                      xmlns="http://www.w3.org/2000/svg" p-id="3908" width="18" height="18"><path
-                                        d="M163.446154 275.692308h697.107692c19.692308 0 33.476923 25.6 17.723077 43.323077L537.6 736.492308c-11.815385 15.753846-37.415385 15.753846-49.230769 0L143.753846 319.015385c-13.784615-17.723077-1.969231-43.323077 19.692308-43.323077z"
-                                        p-id="3909"></path></svg>
+                                    d="M163.446154 275.692308h697.107692c19.692308 0 33.476923 25.6 17.723077 43.323077L537.6 736.492308c-11.815385 15.753846-37.415385 15.753846-49.230769 0L143.753846 319.015385c-13.784615-17.723077-1.969231-43.323077 19.692308-43.323077z"
+                                    p-id="3909"></path></svg>
                                 </span>
-                                </button>
-                            </div>
-                        </div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <form>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Cutting:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <b class="cutting-time cutting-time-start">00:00</b>
+                    <input type="text" id="cuttingExample" value="" data-slider-min="0"
+                           data-slider-id='cuttingSlider'
+                           data-slider-max="180" data-slider-step="1" data-slider-value="[0,180]">
+                    <b class="cutting-time cutting-time-end">03:00</b>
+                  </div>
+                </div>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Video Bitrate:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <input type="text" id="vbitrateExample" value="" data-slider-min="100" data-slider-max="10000"
+                           data-slider-step="10" , data-slider-value="2500">
+                    <b>kbps</b>
+                  </div>
+                </div>
+
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Audio Bitrate:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <input type="text" id="abitrateExample" value="" data-slider-min="10" data-slider-max="320"
+                           data-slider-step="1" data-slider-value="192">
+                    <b>kbps</b>
+                  </div>
+                </div>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">FPS:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <select class="selectpicker">
+                      <option>24</option>
+                      <option>29.97</option>
+                      <option>30</option>
+                      <option>59.97</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Resolution:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <input type="text" value="1920" class="form-control text-align-center">
+                    <span class="p-1">x</span>
+                    <input type="text" value="1080" class="form-control text-align-center">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </li>
+        <li class="p-1 border-0 list-group-item">
+          <div class="transcode-item">
+            <div class="input-group">
+              <div class="progress-parent">
+                <div class="progress l-radius" style="height: 100%">
+                  <div class="progress-bar basecolor progress-bar-striped progress-bar-animated" role="progressbar"
+                       style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                       aria-valuemax="100">
+                    <div class="transcode-item-info">
+                      <div class="icon-parent">
+                        <svg t="1602607880537" class="icon icon-video" viewBox="0 0 1024 1024"
+                             version="1.1"
+                             xmlns="http://www.w3.org/2000/svg" p-id="1279" width="28"
+                             height="28">
+                          <path
+                              d="M959.5 511.9c0-246.8-200.8-447.7-447.7-447.7C265 64.2 64.2 265 64.2 511.9c0 246.8 200.8 447.7 447.7 447.7H874v-49.7H716.5c144.2-74.5 243-224.9 243-398z m-845.6 0c0-219.4 178.5-397.9 397.9-397.9 219.4 0 397.9 178.5 397.9 397.9 0 219.4-178.5 397.9-397.9 397.9-219.4 0-397.9-178.5-397.9-397.9z"
+                              fill="#2c2c2c" p-id="1280"></path>
+                          <path
+                              d="M383.9 698.5l323.2-186.6-323.2-186.6v373.2z m39.5-304.8l204.7 118.2-204.7 118.2V393.7z"
+                              fill="#2c2c2c" p-id="1281"></path>
+                        </svg>
+                      </div>
+                      <p class="flex-grow-1 card-text text-dark font-weight-bold transcode-name"
+                         style="font-size: 16px;">
+                        建德苞茶.mp4</p>
+                      <select class="no-radius selectpicker background-transparent text-align-end" data-width="auto"
+                              title="Convert to..."
+                              data-live-search="true">
+                        <optgroup label="Commonly Used">
+                          <option data-subtext="Video">mp4</option>
+                          <option data-subtext="Video">mov</option>
+                          <option data-subtext="Video">mp3</option>
+                        </optgroup>
+                        <optgroup label="Audio">
+                          <option>mp3</option>
+                          <option>aac</option>
+                          <option>wav</option>
+                        </optgroup>
+                      </select>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group-append transcode-status">
+              <button class="btn no-radius" type="button" data-toggle="tooltip" data-placement="top"
+                      title="Start to transcode">
+                                <span class="icon-parent">
+                                <svg t="1602609303457" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" p-id="3003" width="24" height="24">
+                                    <path
+                                        d="M687.600679 522.283775L454.661003 387.639522c-13.310839-7.67933-24.573856-1.535866-24.573856 14.33475V670.750821c0 15.35866 11.263017 22.014079 24.573856 14.334749l232.939676-134.644252c13.822794-7.67933 13.822794-20.478213 0-28.157543z"
+                                        p-id="3004" fill="#2c2c2c"></path>
+                                    <path
+                                        d="M415.240442 889.867703c-146.93118-38.39665-253.929845-161.26593-272.872192-311.780797C122.913948 427.060083 195.611605 279.616947 327.184125 203.335603c41.468382-24.061901 87.032406-39.420561 134.644252-46.07598 28.669499-4.095643 48.635757-30.71732 45.05207-58.874863-1.535866-13.822794-8.703241-26.109722-19.454303-34.812963-10.751062-8.703241-24.573856-12.286928-38.39665-10.751062h-0.511955c-60.922684 8.191285-119.285592 28.157543-173.040902 58.874864C164.38233 176.20197 81.957521 284.224545 49.704335 408.117736c-31.741231 121.333414-15.35866 248.298336 46.07598 357.344821 31.741231 56.827042 75.769389 106.998664 127.476878 145.90727l-53.243355 7.167375H168.989928c-28.669499 5.631509-47.099891 33.789052-41.468382 61.946595 5.119553 24.573856 27.133633 42.492293 51.707488 42.492292h3.071732l226.284257-30.71732c13.822794-2.047821 26.109722-9.215196 34.812963-20.478213 8.703241-11.263017 12.286928-25.085811 10.239106-38.908605-3.071732-20.478213-17.918437-37.372739-38.39665-43.004248zM928.219685 289.856054c-33.789052-59.898774-80.376987-112.118218-135.668163-152.050734l88.056317-33.277096c27.645588-6.143464 45.564025-33.789052 39.932516-61.946595-5.119553-25.597767-28.669499-44.028159-54.779221-42.492293h-1.535866L614.391066 63.059842c-28.157543 4.607598-48.123801 31.229275-44.028158 59.386819 3.071732 20.990169 17.918437 38.39665 38.908605 43.516203 146.93118 38.908605 253.929845 161.26593 272.872192 311.780797 12.798883 98.807379-13.310839 197.102803-73.721568 276.967834-58.874863 78.329166-148.467046 130.54861-245.738559 143.347493-28.669499 4.095643-49.147712 30.71732-45.052069 59.386819 2.047821 13.822794 9.215196 26.109722 19.966258 34.812962 9.215196 7.167375 20.478213 10.751062 31.74123 10.751062 2.559777 0 4.607598 0 7.167375-0.511955 124.405146-16.894526 239.595095-83.960674 315.364484-184.303919 115.701905-152.562689 130.036654-359.904598 36.348829-528.337903z"
+                                        p-id="3005" fill="#2c2c2c"></path>
+                                </svg>
+                            </span>
+              </button>
+              <div data-toggle="tooltip" data-placement="top" title="Advanced Settings">
+                <button class="btn r-radius h-100" type="button" data-toggle="collapse"
+                        data-target="#collapseExample2" aria-expanded="false"
+                        aria-controls="collapseExample2">
+                                    <span class="icon-parent">
+                                <svg t="1602612077585" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" p-id="3908" width="18" height="18"><path
+                                    d="M163.446154 275.692308h697.107692c19.692308 0 33.476923 25.6 17.723077 43.323077L537.6 736.492308c-11.815385 15.753846-37.415385 15.753846-49.230769 0L143.753846 319.015385c-13.784615-17.723077-1.969231-43.323077 19.692308-43.323077z"
+                                    p-id="3909"></path></svg>
+                                </span>
+                </button>
+              </div>
+            </div>
+          </div>
 
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            TODO: Advanced Settings Collapse
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <!--item template end-->
-        </div>
-        <div class="query-footer card-footer">
-            <span class="query-footer-label">Total:</span>
-            <span class="query-footer-value">100%</span>
-        </div>
+          <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+              <form>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Cutting:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <b class="cutting-time cutting-time-start">00:00</b>
+                    <input type="text" id="cuttingExample2" value="" data-slider-min="0"
+                           data-slider-id='cuttingSlider'
+                           data-slider-max="180" data-slider-step="1" data-slider-value="[0,180]">
+                    <b class="cutting-time cutting-time-end">03:00</b>
+                  </div>
+                </div>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Video Bitrate:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <input type="text" id="vbitrateExample2" value="" data-slider-min="100" data-slider-max="10000"
+                           data-slider-step="10" data-slider-value="2500">
+                    <b>kbps</b>
+                  </div>
+                </div>
+
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Audio Bitrate:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <input type="text" id="abitrateExample2" value="" data-slider-min="10" , data-slider-max="320" ,
+                           data-slider-step="1" , data-slider-value="192">
+                    <b>kbps</b>
+                  </div>
+                </div>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">FPS:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <select class="selectpicker">
+                      <option>24</option>
+                      <option>29.97</option>
+                      <option>30</option>
+                      <option>59.97</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group pt-1 pb-1">
+                  <div class="input-group-prepend w-25">
+                    <span class="input-group-text w-100 justify-content-center">Resolution:</span>
+                  </div>
+                  <div class="advanced-input r-radius">
+                    <input type="text" value="1920" class="form-control text-align-center">
+                    <span class="p-1">x</span>
+                    <input type="text" value="1080" class="form-control text-align-center">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </li>
+        <!--item template end-->
+
+      </ul>
     </div>
-
-    <div class="footer">
-
+    <div class="query-footer card-footer">
+      <span class="query-footer-label">Total:</span>
+      <span class="query-footer-value">50%</span>
     </div>
+  </div>
+
+  <div class="footer">
+
+  </div>
 </div>
 
 <script type="text/javascript">
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+  function secondsToTimeString(sec) {
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return `${(Array(2).join('0') + m).slice(-2)}:${(Array(2).join('0') + s).slice(-2)}`;
+  }
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#cuttingExample').slider({
+      formatter: function (value) {
+        const s = value[0];
+        const e = value[1];
+        return `${secondsToTimeString(s)} ~ ${secondsToTimeString(e)}`;
+      }
+    });
+    $('#vbitrateExample').slider({});
+    $('#abitrateExample').slider({});
+    $('#cuttingExample2').slider({
+      formatter: function (value) {
+        const s = value[0];
+        const e = value[1];
+        return `${secondsToTimeString(s)} ~ ${secondsToTimeString(e)}`;
+      }
+    });
+    $('#vbitrateExample2').slider({});
+    $('#abitrateExample2').slider({});
+  })
 </script>
 
 <script type="text/javascript">
-    function ffmpeg(opts) {
-        const _ffmpeg = Module.cwrap('proxy_main', 'number', ['number', 'number']);
-        const args = opts.unshift('ffmpeg');
-        const argsPtr = Module._malloc(args.length * Uint32Array.BYTES_PER_ELEMENT);
-        args.forEach((s, idx) => {
-            const buf = Module._malloc(s.length + 1);
-            Module.writeAsciiToMemory(s, buf);
-            Module.setValue(argsPtr + (Uint32Array.BYTES_PER_ELEMENT * idx), buf, 'i32');
-        });
-        _ffmpeg(args.length, argsPtr);
-    }
+  function ffmpeg(opts) {
+    const _ffmpeg = Module.cwrap('proxy_main', 'number', ['number', 'number']);
+    const args = opts.unshift('ffmpeg');
+    const argsPtr = Module._malloc(args.length * Uint32Array.BYTES_PER_ELEMENT);
+    args.forEach((s, idx) => {
+      const buf = Module._malloc(s.length + 1);
+      Module.writeAsciiToMemory(s, buf);
+      Module.setValue(argsPtr + (Uint32Array.BYTES_PER_ELEMENT * idx), buf, 'i32');
+    });
+    _ffmpeg(args.length, argsPtr);
+  }
 </script>
 </body>
 
