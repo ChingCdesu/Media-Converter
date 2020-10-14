@@ -14,7 +14,7 @@ Used packages:
 
 ## Build, Deploy
 
-**Build Requirements: **
+**Build Requirements:**
 
 * CMake and Any C++ Compiler
 
@@ -23,7 +23,7 @@ mkdir build
 cmake --build ./build --target media-converter -j6
 ```
 
-**Config: **
+**Config:**
 
 Copy `config.default.ini` and rename to `config.ini`, to change your own config.
 
