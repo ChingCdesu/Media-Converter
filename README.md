@@ -32,9 +32,9 @@ You can edit `config.ini` to change server actions.
 ```ini
 # config.default.ini
 [server]
-bind=127.0.0.1 							# server host, default is 127.0.0.1
-port=3000			 							# server port, default is 3000
-static-folder=./public			# static folder path, default is ./public
+bind=127.0.0.1              # server host, default is 127.0.0.1
+port=3000                   # server port, default is 3000
+static-folder=./public      # static folder path, default is ./public
 ```
 
 ## How this repository works?
