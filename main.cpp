@@ -1,16 +1,16 @@
 //
 // main.cpp
 // media-converter
-// 
+//
 // Created by _ChingC on 2020/10/12.
 // GitHub: https://github.com/ChingCdesu
 // Copyright © 2020 _ChingC. All right reserved.
 //
 
-#include <httplib.h>
-#include <fmt/core.h>
-#include "init.h"
 #include "config.h"
+#include "init.h"
+#include <fmt/core.h>
+#include <httplib.h>
 
 using namespace httplib;
 
@@ -21,8 +21,9 @@ int main() {
 
     int port = config->GetInteger("server", "port", 3000);         // 服务端端口
     std::string host = config->Get("server", "bind", "127.0.0.1"); // 服务端地址
+    std::string static_folder = config->Get("server", "static-folder", "./public");
 
-    auto ret = svr.set_mount_point("/", "./public"); // 装载静态资源文件夹
+    auto ret = svr.set_mount_point("/", static_folder.c_str()); // 装载静态资源文件夹
     if (!ret) {
         CLOG(FATAL, "server") << "The specified base directory doesn't exist!";
     }
@@ -41,13 +42,16 @@ int main() {
             _headers << h.first << ": " << h.second << std::endl;
         }
         CLOG(ERROR, "server") << req.method << " " << req.path << "\n"
-                              << "Header: \n" << _headers.str() << "\n"
-                              << "Query: \n" << _params.str() << "\n"
-                              << "Body: \n" << req.body;
+                              << "Header: \n"
+                              << _headers.str() << "\n"
+                              << "Query: \n"
+                              << _params.str() << "\n"
+                              << "Body: \n"
+                              << req.body;
         res.set_content("<h3>500 Internal Server Error</h3>", "text/html");
     });
     CLOG(INFO, "server") << fmt::format("Server is listening on {}:{}", host, port);
-    svr.listen(host.c_str(), port);  // 启动服务器监听
+    svr.listen(host.c_str(), port); // 启动服务器监听
 
     return 0;
 }
